@@ -8,8 +8,8 @@ Feature: One Side Make my trip
  Scenario Outline: User searches for a city which has flight destination and verifies it
    Given "ONEWAY" option is selected
    When user clicks on from section
-   And he enters <city>
-   Then he finds <city> in the Select list
+   And user enters <city>
+   Then user finds <city> in the Select list
    And verifies DEPARTURE date to be the next day
    And DEPARTURE also shows the day of departure
 
@@ -24,16 +24,16 @@ Feature: One Side Make my trip
      Then User verifies <sourceCity> Airport appearance in dropdown list
      When User clicks on TO desination field and enters <destinationCity>
      Then User verifies <destinationCity> to be present in the drop down
-     When he clicks on Departure field
-     Then he verifies a that a calendar appears
-     When he selects a future date
-     Then he verifies the date and day shows, is as he selected
+     When user clicks on Departure field
+     Then user verifies a that a calendar appears
+     When user selects a future date
+     Then user verifies the date and day shows, is as user selected
      Examples:
        | sourceCity | destinationCity|
        | Chennai    | New york       |
        | Kochi      | Chicago       |
 
-  Scenario: user types gibberish in From field he gets
+  Scenario: user types gibberish in From field user gets
      suggestions according to the first letter of the gibberish text
      Given "ONEWAY" option is selected
      When User types "asdfasdlasdn" text in From field
@@ -44,9 +44,9 @@ Feature: One Side Make my trip
     When user clicks on Travellers and class field
     And User selects 2 adults
     And selects 1 child(2y-12y)
-    And and 1 infant below 2 yrs
-    And chooses <class> class and submits
-    Then he verifies 4 travellers in the Travellers
+    And selects 1 infant below 2 yrs
+    And selects <class> class and submits
+    Then user verifies 4 travellers in the Travellers
     And verifies class to be <class>
 
     Examples:
@@ -55,7 +55,6 @@ Feature: One Side Make my trip
     | Premium Economy |
     | Business |
     | First Class |
-
 
   Scenario: User is shown delhi and bangalore as default FROM and TO for first time indian user
     Given "ONEWAY" option is selected
